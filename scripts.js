@@ -41,12 +41,10 @@ function analyzeText() {
       : "ekki samhverfur";
     document.querySelector(".reversed").textContent = reverse(text);
 
-    // Show output if the analysis button has been clicked
     if (analysisVisible) {
       outputDiv.classList.remove("hidden");
     }
   } else {
-    // Hide output if text is empty
     outputDiv.classList.add("hidden");
   }
 }
