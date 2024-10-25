@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "browser-sync start --server --files scripts.js index.html",
     "copy:html": "cpy ./*.html ./build/",
-    "copy:js": "cpy './*.js' './**/*.js' ./build/",
+    "copy:js": "cpy './*.js' './lib/*.js' './scripts/*.js ./build/",
     "copy:css": "cpy ./*.css ./build/",
     "build": "concurrently npm:copy:*"
   },
