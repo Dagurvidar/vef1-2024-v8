@@ -1,5 +1,5 @@
-import { countGivenCharactersInString } from "../lib/helpers";
-import { CONSONANTS } from "../lib/helpers";
+import { countGivenCharactersInString } from "../lib/helpers.js";
+import { CONSONANTS } from "../lib/helpers.js";
 
 export function consonants(str) {
   return countGivenCharactersInString(str, CONSONANTS);

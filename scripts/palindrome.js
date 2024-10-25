@@ -1,5 +1,5 @@
-import { isString } from "../lib/helpers";
-import { reverse } from "./reverse";
+import { isString } from "../lib/helpers.js";
+import { reverse } from "./reverse.js";
 
 export function palindrome(str) {
   if (!isString(str)) {

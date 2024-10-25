@@ -6,13 +6,53 @@
  * Notar `console.assert` til að athuga hvort föll virki rétt.
  */
 
-import { isString, splitOnWhitespace } from './lib/helpers.js';
+import { longest } from "./scripts/longest.js";
+import { shortest } from "./scripts/shortest.js";
+import { reverse } from "./scripts/reverse.js";
+import { vowels } from "./scripts/vowels.js";
+import { consonants } from "./scripts/consonants.js";
+import { palindrome } from "./scripts/palindrome.js";
 
-const test = isString('hæ');
-console.log('test er strengur?', test);
+const textArea = document.querySelector("#string");
+const analyzeButton = document.querySelector("#analyzeButton");
+const clearButton = document.querySelector("#clearButton");
+const outputDiv = document.querySelector(".output.hidden");
 
-const stringWithWhitespace = `halló
-\theimur
-hæ`;
-const split = splitOnWhitespace(stringWithWhitespace);
-console.log(split);
+let analysisVisible = false;
+
+analyzeButton.addEventListener("click", () => {
+  analysisVisible = true;
+  analyzeText();
+});
+textArea.addEventListener("input", analyzeText);
+clearButton.addEventListener("click", clearResults);
+
+function analyzeText() {
+  const text = textArea.value;
+
+  if (text.trim() !== "") {
+    document.querySelector(".input").textContent = text;
+    document.querySelector(".longest").textContent = longest(text);
+    document.querySelector(".shortest").textContent = shortest(text);
+    document.querySelector(".vowels").textContent = vowels(text);
+    document.querySelector(".consonants").textContent = consonants(text);
+    document.querySelector(".palindrome").textContent = palindrome(text)
+      ? "samhverfur"
+      : "ekki samhverfur";
+    document.querySelector(".reversed").textContent = reverse(text);
+
+    // Show output if the analysis button has been clicked
+    if (analysisVisible) {
+      outputDiv.classList.remove("hidden");
+    }
+  } else {
+    // Hide output if text is empty
+    outputDiv.classList.add("hidden");
+  }
+}
+
+function clearResults() {
+  textArea.value = "";
+  outputDiv.classList.add("hidden");
+  analysisVisible = false;
+}

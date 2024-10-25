@@ -1,10 +1,9 @@
-import { isString } from "../lib/helpers";
+import { isString } from "../lib/helpers.js";
 
 export function reverse(str) {
   if (!isString(str)) {
     return null;
   }
-
   return str.split("").reverse().join("");
 }
 console.assert(

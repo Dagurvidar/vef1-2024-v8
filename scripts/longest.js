@@ -1,5 +1,5 @@
-import { isString } from "../lib/helpers";
-import { splitOnWhitespace } from "../lib/helpers";
+import { isString } from "../lib/helpers.js";
+import { splitOnWhitespace } from "../lib/helpers.js";
 
 export function longest(str) {
   if (!isString(str)) {

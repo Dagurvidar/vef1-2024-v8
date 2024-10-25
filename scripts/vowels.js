@@ -1,5 +1,5 @@
-import { countGivenCharactersInString } from "../lib/helpers";
-import { VOWELS } from "../lib/helpers";
+import { countGivenCharactersInString } from "../lib/helpers.js";
+import { VOWELS } from "../lib/helpers.js";
 
 export function vowels(str) {
   return countGivenCharactersInString(str, VOWELS);
